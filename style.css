@@ -1,0 +1,53 @@
+.page {
+    background-color: #004713;
+}
+
+.hero-title {
+    /* background-color: rgb(0, 0, 0); */
+    color: #DFB408;
+    font-family: "Jost", sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.hero-subtitle {
+    color: #ffffff;
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.jost-title {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.about-section {
+    font-family: "Jost", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 40px 20px;
+}
+
+.about-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.contact-person {
+    margin: 30px auto;
+    max-width: 400px;
+}
+
+.contact-person h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-person p {
+    margin: 8px 0;
+    font-size: 18px;
+}
