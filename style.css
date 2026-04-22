@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap");
+
 .page {
     background-color: #004713;
 }
@@ -44,7 +46,6 @@
     margin: 20px 0;   /* adds space above and below */
 }
 
-/* styles real button elements */
 .buttons button {
     display: inline-block;  /* makes links sit side by side */
     font-family: "Jost", sans-serif;
@@ -57,6 +58,51 @@
     color: #ffffff;
     border: none;
     cursor: pointer;
+}
+.website-button {
+    text-align: center;
+}
+
+.website-button button {
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    font-family: "Jost", sans-serif;
+    font-size: 30px;
+    width: 320px;
+    font-weight: 600;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #32d859;
+    color: #ffffff;
+    border: 5px solid #1bb23e;
+    cursor: pointer;
+}
+
+/* shared nav button on student pages */
+.button {
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    font-family: "Jost", sans-serif;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 30px;
+    width: 320px;
+    max-width: 100%;
+    font-weight: 600;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #32d859;
+    color: #ffffff;
+    border: 5px solid #1bb23e;
+    cursor: pointer;
+}
+
+button.button {
+    font-family: "Jost", sans-serif;
 }
 
 /* to make all imgs on same row */

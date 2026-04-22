@@ -1,0 +1,123 @@
+
+.body{
+    background-color: black;
+}
+
+h1, h2,h3 {
+    font-family: 'Impact', sans-serif;
+    text-transform: uppercase; /* Makes titles look like jersey names */
+    letter-spacing: 2px;
+}
+
+p,a,span{
+    font-family: 'Helvetica';
+    text-transform: uppercase; /* Makes titles look like jersey names */
+    letter-spacing: 1px;
+}
+.main-header{ /*Working with the header1. Since I want to have more than one h1, I have to name it speicific name so the 
+    program knows which h1 I'm talking about*/
+    background-color: black; /*THIS IS HOW YOU COMMENT IN CSS*/
+    color:#FB4F14; /*I just adjusted the font color of the header*/
+    text-align: center; 
+    border: 3px solid white; /*adjusted both the border width and the color*/
+    font-size: 50px;
+    padding: 20px;
+}
+
+.helmet-section { /*creating the frame for the helmet*/
+  background-color: #FB4F14; 
+  height: 500px;             
+  display: flex;             /*creates a box for the helmet in the CSS page - seperate from the HTML one*/
+  justify-content: center;    /*centers helmet horizontally*/
+  align-items: center;        /*centers our helmet vertically */
+}
+
+.helmet-2d {
+  width: 320px;                
+  height: 270px;               
+  background-color: #FB4F14;   
+  position: relative;/*the white cutout will be based on the position of this helmet*/
+  border: 5px solid rgb(0, 0, 0);   
+  border-radius: 50% 50% 30% 15%; /*rounds the corners of the border -- top left, top right, bottom right, bottom left -- 50 + 50 = full top is rounded*/
+  overflow: hidden; /*allows the white to sit on top of the orange */
+
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, transparent 60%), /*creates the white gradient. Starts at 30% from left and 30% from top, color + 40% see through, and it will be fully transparent by 60%*/
+    repeating-radial-gradient(/*creates the curving black lines*/
+      circle at 100% 0%, /*100% from left, 0% from top*/
+        #000, 
+        #000 25px, /*continues for 25 pixels*/
+        transparent 25px, 
+        transparent 55px /*transparent for 55 pixels so the orange can shine through*/
+    );
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,0.4), /*creates a shadow on the inside edges like a box*/
+              0 15px 20px rgba(0,0,0,0.2); /*creates the shadow around the helmet*/
+              
+    animation: rotate 10s linear infinite;
+}
+
+.helmet-2d::before {/*pseudo element that follows the main helmet. It occurs in front (before) the helmet*/
+  content: ""; 
+  position: absolute; /*allows the position of the white cutout to be based on the orange part of the helmet*/
+  width: 120px; 
+  height: 150px;
+  background-color: white; 
+  top: 120px;     /*Moves it 120px down from the top edge*/
+  border-radius: 0 50% 50% 0;  
+} 
+
+@keyframes rotate { /*animation section*/
+  0% { /*0% through the animation*/
+    /* Start: Normal height + No rotation */
+    transform: translateY(0px) rotate(0deg);
+    background-color: #FB4F14;
+  }
+
+  25%{
+    transform:translateY(-20px)rotate(90deg);
+    background-color: #ff6634;
+  }
+  50% {
+    /* Middle: Up 20px + Tilted 10 degrees */
+    transform: translateY(-20px) rotate(180deg);
+    background-color: #fa7c52;
+  }
+  75%{
+    transform: translateY(-20px) rotate(270deg);
+    background-color: #ffa080;
+  }
+  100% {
+    /* End: Back to start */
+    transform: translateY(0px) rotate(360deg);
+    background-color: #fab198;
+  }
+}
+
+.shadow {
+  position: relative;
+  width: 150px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.4); /* Faint glow on the black floor */
+  border-radius: 50%;
+  margin-top: 60px;
+  filter: blur(5px);
+  animation: shadowScale 10s linear infinite; /*continous loop forever that stays the same pace*/
+}
+
+@keyframes shadowScale {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0.4; } /* Shadow gets bigger/fainter as helmet rises */
+}
+
+.helmet-2d:hover {
+  animation-duration: 5s; /* faster than normal -- double!*/
+}
+
+.news-img {
+    width: 40%;       /* Makes the image fill the width of the card */
+    height: 20x;     /* Forces all images to be the exact same height */
+    object-fit: cover; /* This is the 'Magic' line: it crops the image to fit instead of squishing it */
+    display: block;    /* Removes tiny gaps at the bottom of the image */
+}
+
+
